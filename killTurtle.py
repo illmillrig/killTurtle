@@ -22,6 +22,9 @@ def removeCallbacks():
     KILL_CALLBACK_IDS = list()
 
 def killTurtle(*args, **kwargs):
+    if not cmds.pluginInfo("Turtle", query=True, loaded=True):
+        return
+    
     turtlesNodesTypes = cmds.pluginInfo("Turtle", query=True, dependNode=True)
     turtleNodes = cmds.ls(type=turtlesNodesTypes)
 
