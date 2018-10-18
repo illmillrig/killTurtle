@@ -26,8 +26,8 @@ def killTurtle(*args, **kwargs):
     if not cmds.pluginInfo("Turtle", query=True, loaded=True):
         return
     
-    turtlesNodesTypes = cmds.pluginInfo("Turtle", query=True, dependNode=True)
-    turtleNodes = cmds.ls(type=turtlesNodesTypes)
+    turtleNodeTypes = cmds.pluginInfo("Turtle", query=True, dependNode=True)
+    turtleNodes = cmds.ls(type=turtleNodeTypes)
 
     if turtleNodes:
         deleteNodes(turtleNodes)
