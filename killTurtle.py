@@ -11,6 +11,7 @@ _CALLBACKS = (om.MSceneMessage.kAfterImport,
 
 def createCallbacks():
     global KILL_CALLBACK_IDS
+    KILL_CALLBACK_IDS = list()
     for callback in _CALLBACKS:
         callbackID = om.MSceneMessage.addCallback(callback, killTurtle)
         KILL_CALLBACK_IDS.append(callbackID)
